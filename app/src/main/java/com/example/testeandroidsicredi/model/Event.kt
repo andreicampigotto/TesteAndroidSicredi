@@ -20,7 +20,7 @@ data class Event (
     @SerializedName("title")
     val title: String,
     @SerializedName("id")
-    val id: Long,
+    val id: String,
 )
 
 data class EventResponse(
@@ -28,5 +28,7 @@ data class EventResponse(
 )
 
 data class People(
-    val id: Long
+    val id: Long,
+    val name: String,
+    val email: String
 )
