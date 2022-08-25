@@ -12,7 +12,6 @@ class EventRepository @Inject constructor(
 ) {
 
     suspend fun getEvents(): List<Event>? {
-
         val resultAPI = withContext(Dispatchers.Default) {
             val response = service.getEvents()
             val processResponse = processData(response)
