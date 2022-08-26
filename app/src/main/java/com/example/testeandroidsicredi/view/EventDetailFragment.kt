@@ -48,6 +48,7 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
 
         event.image.let {
             Glide.with(this).load(it)
+                .placeholder(R.drawable.logo)
                 .into(binding.incImage.ivImage)
         }
     }
