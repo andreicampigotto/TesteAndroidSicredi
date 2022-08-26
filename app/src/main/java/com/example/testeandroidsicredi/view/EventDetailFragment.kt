@@ -40,10 +40,10 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
         binding.tvTitle.text = event.title
         binding.tvDescription.text = event.description
         binding.tvDate.text = event.formattedDate()
+
         event.image.let {
             Glide.with(this).load(it)
                 .into(binding.incImage.ivImage)
         }
     }
-
 }

@@ -69,6 +69,7 @@ dependencies {
 
     // HILT
     implementation 'com.google.dagger:hilt-android:2.42'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
     kapt 'com.google.dagger:hilt-compiler:2.42'
 
     // TESTING - ANDROID TEST

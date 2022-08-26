@@ -8,12 +8,12 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.testeandroidsicredi.view.MainActivity"
-        android:label="MainActivity"
+        android:label="Bem vindo"
         tools:layout="@layout/main_activity" />
     <fragment
         android:id="@+id/eventsFragment"
         android:name="com.example.testeandroidsicredi.view.EventsFragment"
-        android:label="EventsFragment"
+        android:label="Lista de Eventos"
         tools:layout="@layout/fragment_events">
         <action
             android:id="@+id/action_eventsFragment_to_eventDetailFragment"
@@ -22,11 +22,22 @@
     <fragment
         android:id="@+id/eventDetailFragment"
         android:name="com.example.testeandroidsicredi.view.EventDetailFragment"
-        android:label="fragment_events"
+        android:label="Detalhes do evento"
         tools:layout="@layout/fragment_event_detail">
-
         <argument
             android:name="EventModel"
             app:argType="com.example.testeandroidsicredi.model.Event" />
+        <action
+            android:id="@+id/action_eventDetailFragment_to_checkInFragment"
+            app:destination="@id/checkInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkInFragment"
+        android:name="com.example.testeandroidsicredi.view.CheckInFragment"
+        android:label="Insira os dados para o check-in"
+        tools:layout="@layout/fragment_checkin">
+        <argument
+            android:name="EventId"
+            app:argType="string" />
     </fragment>
 </navigation>
