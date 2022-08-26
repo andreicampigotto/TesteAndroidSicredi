@@ -32,7 +32,7 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
 
         viewModel.event.observe(viewLifecycleOwner, observerEvent)
 
-        viewModel.getEventDetail(args.eventIdDetail)
+        viewModel.getEventDetail(args.eventDetailId)
 
 //        load()
     }
