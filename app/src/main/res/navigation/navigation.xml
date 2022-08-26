@@ -17,19 +17,23 @@
         tools:layout="@layout/fragment_events">
         <action
             android:id="@+id/action_eventsFragment_to_eventDetailFragment"
-            app:destination="@id/eventDetailFragment" />
+            app:destination="@id/eventDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/eventsFragment" >
+        </action>
     </fragment>
     <fragment
         android:id="@+id/eventDetailFragment"
         android:name="com.example.testeandroidsicredi.view.EventDetailFragment"
         android:label="Detalhes do evento"
         tools:layout="@layout/fragment_event_detail">
+        <action
+            android:id="@+id/action_eventDetailFragment_to_checkInFragment"
+            app:destination="@id/checkInFragment"
+            app:popUpTo="@id/eventsFragment" />
         <argument
             android:name="EventDetailId"
             app:argType="string" />
-        <action
-            android:id="@+id/action_eventDetailFragment_to_checkInFragment"
-            app:destination="@id/checkInFragment" />
     </fragment>
     <fragment
         android:id="@+id/checkInFragment"

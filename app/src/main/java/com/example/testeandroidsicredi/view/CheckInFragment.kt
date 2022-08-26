@@ -20,7 +20,10 @@ class CheckInFragment : Fragment(R.layout.fragment_checkin) {
         binding = FragmentCheckinBinding.bind(view)
 
 
+
     }
+
+
 
 
 }

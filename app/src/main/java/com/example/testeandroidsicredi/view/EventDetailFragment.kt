@@ -1,6 +1,7 @@
 package com.example.testeandroidsicredi.view
 
 import android.os.Bundle
+import android.text.Layout
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -29,7 +30,6 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
         binding = FragmentEventDetailBinding.bind(view)
 
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
-
         viewModel.event.observe(viewLifecycleOwner, observerEvent)
 
         viewModel.getEventDetail(args.eventDetailId)
