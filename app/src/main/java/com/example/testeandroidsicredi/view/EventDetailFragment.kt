@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
 
     private lateinit var binding: FragmentEventDetailBinding
-    private val args by navArgs<EventDetailFragmentArgs>()
+    private val args: EventDetailFragmentArgs by navArgs()
     private lateinit var viewModel: EventViewModel
 
     private val observerEvent = Observer<Event> {
@@ -30,11 +30,11 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
 
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
 
-        viewModel.events.observe(viewLifecycleOwner, observerEvent)
-        viewModel.getEventDetail(args.eventId)
+        viewModel.event.observe(viewLifecycleOwner, observerEvent)
 
-        load(Event)
+        viewModel.getEventDetail(args.eventIdDetail)
 
+//        load()
     }
 
     private fun load(event: Event) {
