@@ -1,9 +1,9 @@
 package com.example.testeandroidsicredi.model
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+import java.text.SimpleDateFormat
+import java.util.*
 
 data class Event(
     @SerializedName("date")
@@ -22,11 +22,12 @@ data class Event(
     val title: String,
     @SerializedName("id")
     val id: String,
-):Serializable {
-    @RequiresApi(Build.VERSION_CODES.O)
+) : Serializable {
     fun formattedDate(): String {
-        return java.time.format.DateTimeFormatter.ISO_INSTANT
-            .format(java.time.Instant.ofEpochSecond(date))
+        val timeD = Date(date / 1000)
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+
+        return sdf.format(timeD)
     }
 }
 

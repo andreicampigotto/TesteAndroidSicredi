@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CheckInFragment : Fragment(R.layout.fragment_checkin) {
 
     private lateinit var binding: FragmentCheckinBinding
-    private val args by navArgs<CheckInFragmentArgs>()
+//    private val args by navArgs<CheckInFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

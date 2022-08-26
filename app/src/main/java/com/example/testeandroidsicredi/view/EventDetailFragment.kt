@@ -31,9 +31,9 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
         viewModel.event.observe(viewLifecycleOwner, observerEvent)
 
-        viewModel.getEventDetail(args.eventDetailsId!!.toInt())
+        viewModel.getEventDetail(args.event.id.toInt())
 
-//        load(args.eventSerialized!!)
+        load(args.event!!)
     }
 
     private fun load(event: Event) {

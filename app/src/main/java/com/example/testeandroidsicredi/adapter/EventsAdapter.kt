@@ -28,7 +28,7 @@ class EventsAdapter() :
             holder.bind(event)
             holder.itemView.setOnClickListener {
                 it.findNavController().navigate(
-                    EventsFragmentDirections.actionEventsFragmentToEventDetailFragment(event.id)
+                    EventsFragmentDirections.actionEventsFragmentToEventDetailFragment(event)
                 )
             }
         }
