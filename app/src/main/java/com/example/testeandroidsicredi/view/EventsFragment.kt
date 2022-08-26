@@ -20,7 +20,6 @@ class EventsFragment : Fragment(R.layout.fragment_events) {
     private lateinit var viewModel: EventViewModel
     private lateinit var binding: FragmentEventsBinding
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -31,7 +30,6 @@ class EventsFragment : Fragment(R.layout.fragment_events) {
 
         viewModel.getEventList()
         setupRecyclerView()
-
 
     }
 

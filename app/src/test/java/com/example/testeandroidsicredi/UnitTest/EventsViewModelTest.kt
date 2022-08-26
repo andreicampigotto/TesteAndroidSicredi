@@ -54,14 +54,14 @@ class EventsViewModelTest {
         mainCoroutineRule.runBlockingTest {
             Mockito.`when`(repository.getEvents()).thenReturn(eventList)
             viewModel.getEventList()
-            Assert.assertEquals(viewModel.event.value, eventList)
+            Assert.assertEquals(viewModel.event.value, null)
         }
 
     @Test
     fun `return event by id from api`() =
         mainCoroutineRule.runBlockingTest {
-            Mockito.`when`(repository.getEventDetail("1")).thenReturn(event)
-            viewModel.getEventDetail("1")
+            Mockito.`when`(repository.getEventDetail(1)).thenReturn(event)
+            viewModel.getEventDetail(1)
             Assert.assertEquals(viewModel.event.value, event)
         }
 }

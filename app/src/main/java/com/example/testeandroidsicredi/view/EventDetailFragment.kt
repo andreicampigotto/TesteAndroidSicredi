@@ -1,7 +1,6 @@
 package com.example.testeandroidsicredi.view
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -15,10 +14,10 @@ import com.example.testeandroidsicredi.viewModel.EventViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
+class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
 
     private lateinit var binding: FragmentEventDetailBinding
-    private val args: EventDetailFragmentArgs by navArgs()
+    private val args by navArgs<EventDetailFragmentArgs>()
     private lateinit var viewModel: EventViewModel
 
     private val observerEvent = Observer<Event> {
@@ -32,9 +31,9 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
         viewModel.event.observe(viewLifecycleOwner, observerEvent)
 
-        viewModel.getEventDetail(args.eventDetailId)
+        viewModel.getEventDetail(args.eventDetailsId!!.toInt())
 
-//        load()
+//        load(args.eventSerialized!!)
     }
 
     private fun load(event: Event) {

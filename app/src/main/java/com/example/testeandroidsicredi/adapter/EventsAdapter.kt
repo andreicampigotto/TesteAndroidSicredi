@@ -1,6 +1,5 @@
 package com.example.testeandroidsicredi.adapter
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,11 +27,8 @@ class EventsAdapter() :
         getItem(position).let { event ->
             holder.bind(event)
             holder.itemView.setOnClickListener {
-                val bundle = Bundle()
                 it.findNavController().navigate(
-                    EventsFragmentDirections.actionEventsFragmentToEventDetailFragment(
-                        bundle.putString("id", event.id).toString()
-                    )
+                    EventsFragmentDirections.actionEventsFragmentToEventDetailFragment(event.id)
                 )
             }
         }

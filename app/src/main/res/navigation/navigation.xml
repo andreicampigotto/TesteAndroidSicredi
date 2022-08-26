@@ -19,8 +19,7 @@
             android:id="@+id/action_eventsFragment_to_eventDetailFragment"
             app:destination="@id/eventDetailFragment"
             app:launchSingleTop="true"
-            app:popUpTo="@id/eventsFragment" >
-        </action>
+            app:popUpTo="@id/eventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventDetailFragment"
@@ -32,8 +31,10 @@
             app:destination="@id/checkInFragment"
             app:popUpTo="@id/eventsFragment" />
         <argument
-            android:name="EventDetailId"
-            app:argType="string" />
+            android:name="EventDetailsId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/checkInFragment"

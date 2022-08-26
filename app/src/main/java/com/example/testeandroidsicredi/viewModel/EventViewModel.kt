@@ -21,7 +21,7 @@ class EventViewModel @Inject constructor(
     private val _event = MutableLiveData<Event>()
     val event: LiveData<Event> = _event
 
-    fun getEventDetail(id: String) {
+    fun getEventDetail(id: Int) {
         viewModelScope.launch {
             val returnedPulls =
                 eventRepository.getEventDetail(

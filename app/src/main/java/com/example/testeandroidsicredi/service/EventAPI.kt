@@ -9,7 +9,10 @@ import retrofit2.http.Path
 interface EventAPI {
     @GET("/api/events/{id}")
     suspend fun getEventDetail(
-        @Path("id") id: String
+        @Path(
+            "id",
+            encoded = true
+        ) id: Int
     ): Response<Event>
 
     @GET("/api/events")
@@ -17,8 +20,8 @@ interface EventAPI {
 
     @POST("/api/checkin")
     suspend fun setCheckin(
-        @Path("eventId") eventId:String,
-        @Path("name") name:String,
-        @Path("email") email:String,
+        @Path("eventId") eventId: String,
+        @Path("name") name: String,
+        @Path("email") email: String,
     )
 }
