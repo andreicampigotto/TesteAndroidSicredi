@@ -5,12 +5,14 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.testeandroidsicredi.R
 import com.example.testeandroidsicredi.databinding.FragmentEventDetailBinding
 import com.example.testeandroidsicredi.model.Event
 import com.example.testeandroidsicredi.viewModel.EventViewModel
+import com.google.android.gms.maps.GoogleMap
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,6 +21,7 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
     private lateinit var binding: FragmentEventDetailBinding
     private val args by navArgs<EventDetailFragmentArgs>()
     private lateinit var viewModel: EventViewModel
+    lateinit var mapa: GoogleMap
 
     private val observerEvent = Observer<Event> {
         binding.progressBar.visibility = View.GONE
@@ -34,6 +37,8 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
         viewModel.getEventDetail(args.event.id.toInt())
 
         load(args.event!!)
+
+        checkIn()
     }
 
     private fun load(event: Event) {
@@ -46,4 +51,13 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
                 .into(binding.incImage.ivImage)
         }
     }
+
+    private fun checkIn() {
+        binding.mbCheckIn.setOnClickListener {
+            it.findNavController().navigate(
+                EventDetailFragmentDirections.actionEventDetailFragmentToCheckInFragment(args.event.id)
+            )
+        }
+    }
+
 }

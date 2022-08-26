@@ -29,7 +29,6 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:justificationMode="inter_word"
                     android:maxLines="2"
                     android:padding="4dp"
                     android:text="@string/title"
@@ -68,7 +67,7 @@
                     app:layout_constraintTop_toBottomOf="@id/incImage" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/materialButton"
+                    android:id="@+id/mbCheckIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
@@ -92,7 +91,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mcvDisplay" />
+            app:layout_constraintTop_toBottomOf="@id/mcvDisplay" />
 
         <include
             layout="@layout/include_map"

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testeandroidsicredi.model.Event
 import com.example.testeandroidsicredi.repository.EventRepository
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,6 +21,9 @@ class EventViewModel @Inject constructor(
 
     private val _event = MutableLiveData<Event>()
     val event: LiveData<Event> = _event
+
+    private val _checkIn = MutableLiveData<String>()
+    val checkIn: LiveData<String> = _checkIn
 
     fun getEventDetail(id: Int) {
         viewModelScope.launch {
@@ -39,6 +43,18 @@ class EventViewModel @Inject constructor(
                 eventRepository.getEvents()
             returnedEvents.let {
                 _events.value = it
+            }
+        }
+    }
+
+    fun setCheckIn(id: String, name: String, email: String) {
+        val message = "Max number of elements reached for this resource!"
+        viewModelScope.launch {
+            val setChekIn =
+                eventRepository.setCheckIn(id = id, name = name, email = email)
+            setChekIn.let {}
+            if (setChekIn == message) {
+                _checkIn
             }
         }
     }

@@ -19,9 +19,9 @@ interface EventAPI {
     suspend fun getEvents(): Response<List<Event>>
 
     @POST("/api/checkin")
-    suspend fun setCheckin(
+    suspend fun setCheckIn(
         @Path("eventId") eventId: String,
         @Path("name") name: String,
         @Path("email") email: String,
-    )
+    ): String
 }

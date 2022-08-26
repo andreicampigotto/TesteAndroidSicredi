@@ -25,6 +25,12 @@ class EventRepository @Inject constructor(
         }
     }
 
+    suspend fun setCheckIn(id: String, name: String, email: String): String {
+        return withContext(Dispatchers.Default) {
+            service.setCheckIn(eventId = id, name = name, email = email)
+        }
+    }
+
     private fun <T> processData(response: Response<T>): T? {
         return if (response.isSuccessful) response.body() else null
     }
