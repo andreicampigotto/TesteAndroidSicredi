@@ -25,8 +25,8 @@
         android:label="Detalhes do evento"
         tools:layout="@layout/fragment_event_detail">
         <argument
-            android:name="EventModel"
-            app:argType="com.example.testeandroidsicredi.model.Event" />
+            android:name="EventId"
+            app:argType="string" />
         <action
             android:id="@+id/action_eventDetailFragment_to_checkInFragment"
             app:destination="@id/checkInFragment" />

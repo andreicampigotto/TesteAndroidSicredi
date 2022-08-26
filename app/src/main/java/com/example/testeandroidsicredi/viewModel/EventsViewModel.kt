@@ -12,16 +12,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EventViewModel @Inject constructor(
-    private val event: EventRepository
+    private val eventRepository: EventRepository
 ) : ViewModel() {
 
-    private val _event = MutableLiveData<List<Event>>()
-    val events: LiveData<List<Event>> = _event
+    private val _events = MutableLiveData<List<Event>>()
+    val events: LiveData<List<Event>> = _events
+
+    private val _event = MutableLiveData<Event>()
+    val event: LiveData<Event> = _event
 
     fun getEventDetail(id: String) {
         viewModelScope.launch {
             val returnedPulls =
-                event.getEventDetail(
+                eventRepository.getEventDetail(
                     id = id
                 )
             returnedPulls.let {
@@ -33,9 +36,9 @@ class EventViewModel @Inject constructor(
     fun getEventList() {
         viewModelScope.launch {
             val returnedEvents =
-                event.getEvents()
+                eventRepository.getEvents()
             returnedEvents.let {
-                _event.value = it
+                _events.value = it
             }
         }
     }

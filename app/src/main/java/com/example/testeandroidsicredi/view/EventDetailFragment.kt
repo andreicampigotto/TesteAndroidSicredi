@@ -20,7 +20,7 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
     private val args by navArgs<EventDetailFragmentArgs>()
     private lateinit var viewModel: EventViewModel
 
-    private val observerEvent = Observer<List<Event>> {
+    private val observerEvent = Observer<Event> {
         binding.progressBar.visibility = View.GONE
     }
 
@@ -31,9 +31,10 @@ class EventDetailFragment : Fragment(R.layout.fragment_event_detail) {
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
 
         viewModel.events.observe(viewLifecycleOwner, observerEvent)
-        viewModel.getEventDetail(args.eventModel.id)
+        viewModel.getEventDetail(args.eventId)
 
-        load(args.eventModel)
+        load(Event)
+
     }
 
     private fun load(event: Event) {

@@ -10,7 +10,7 @@ interface EventAPI {
     @GET("/api/events/{id}")
     suspend fun getEventDetail(
         @Path("id") id: String
-    ): Response<List<Event>>
+    ): Response<Event>
 
     @GET("/api/events")
     suspend fun getEvents(): Response<List<Event>>

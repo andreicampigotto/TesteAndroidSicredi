@@ -18,11 +18,10 @@ class EventRepository @Inject constructor(
         }
     }
 
-    suspend fun getEventDetail(id: String): List<Event>? {
+    suspend fun getEventDetail(id: String): Event? {
         return withContext(Dispatchers.Default) {
             val response = service.getEventDetail(id)
-            val processResponse = processData(response)
-            processResponse
+            response.body()
         }
     }
 
