@@ -3,14 +3,16 @@ package com.example.testeandroidsicredi.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testeandroidsicredi.R
 import com.example.testeandroidsicredi.databinding.ItemEventBinding
 import com.example.testeandroidsicredi.model.Event
+import com.example.testeandroidsicredi.view.EventsFragmentDirections
 
-class EventsAdapter(val onTap: (Event) -> Unit) :
+class EventsAdapter() :
     ListAdapter<Event, EventViewHolder>(EventsDiffCallBack()) {
 
     private val events = mutableListOf<Event>()
@@ -22,10 +24,14 @@ class EventsAdapter(val onTap: (Event) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        getItem(position).let {
-            holder.bind(it)
+        getItem(position).let { event ->
+            holder.bind(event)
             holder.itemView.setOnClickListener {
-
+                it.findNavController().navigate(
+                    EventsFragmentDirections.actionEventsFragmentToEventDetailFragment(
+                        event
+                    )
+                )
             }
         }
     }
@@ -35,7 +41,6 @@ class EventsAdapter(val onTap: (Event) -> Unit) :
         submitList(newList)
         notifyDataSetChanged()
     }
-
 }
 
 class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

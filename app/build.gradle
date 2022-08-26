@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.testeandroidsicredi"
-        minSdk 19
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -68,9 +69,6 @@ dependencies {
 
     // HILT
     implementation 'com.google.dagger:hilt-android:2.42'
-    implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    kapt 'com.google.dagger:hilt-compiler:2.42'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt 'com.google.dagger:hilt-compiler:2.42'
 
     // TESTING - ANDROID TEST

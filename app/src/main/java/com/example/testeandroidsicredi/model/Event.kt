@@ -1,10 +1,11 @@
 package com.example.testeandroidsicredi.model
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Event (
-    @SerializedName("people")
-    val people :  List<People>,
     @SerializedName("date")
     val date: Long,
     @SerializedName("description")
@@ -12,23 +13,20 @@ data class Event (
     @SerializedName("image")
     val image: String,
     @SerializedName("longitude")
-    val longitude: Long,
+    val longitude: Double,
     @SerializedName("latitude")
-    val latitude: Long,
+    val latitude: Double,
     @SerializedName("price")
-    val price : Float,
+    val price : Double,
     @SerializedName("title")
     val title: String,
     @SerializedName("id")
     val id: String,
-)
+): Serializable {
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun formattedDate(): String {
+        return java.time.format.DateTimeFormatter.ISO_INSTANT
+            .format(java.time.Instant.ofEpochSecond(date))
+    }
+}
 
-data class EventResponse(
-    val results: List<Event>
-)
-
-data class People(
-    val id: Long,
-    val name: String,
-    val email: String
-)

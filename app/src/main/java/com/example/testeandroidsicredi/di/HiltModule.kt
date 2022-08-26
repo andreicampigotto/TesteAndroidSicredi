@@ -21,11 +21,9 @@ object HiltModule {
             .build()
     }
 
-
     @Provides
     fun provideEvent(retrofit: Retrofit): EventAPI = retrofit.create(EventAPI::class.java)
 
     @Provides
-    fun provideEventRepository(service: EventAPI): EventRepository =
-        EventRepository(service)
+    fun provideEventRepository(service: EventAPI): EventRepository = EventRepository(service)
 }

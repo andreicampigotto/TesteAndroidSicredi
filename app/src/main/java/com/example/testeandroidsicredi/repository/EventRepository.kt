@@ -10,14 +10,20 @@ import javax.inject.Inject
 class EventRepository @Inject constructor(
     private val service: EventAPI
 ) {
-
     suspend fun getEvents(): List<Event>? {
-        val resultAPI = withContext(Dispatchers.Default) {
+        return withContext(Dispatchers.Default) {
             val response = service.getEvents()
             val processResponse = processData(response)
-            processResponse?.results
+            processResponse
         }
-        return resultAPI
+    }
+
+    suspend fun getEventDetail(id: String): List<Event>? {
+        return withContext(Dispatchers.Default) {
+            val response = service.getEventDetail(id)
+            val processResponse = processData(response)
+            processResponse
+        }
     }
 
     private fun <T> processData(response: Response<T>): T? {

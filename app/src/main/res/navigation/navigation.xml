@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/eventsFragment">
 
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.testeandroidsicredi.view.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/main_activity" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.testeandroidsicredi.view.EventsFragment"
+        android:label="EventsFragment"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_eventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.example.testeandroidsicredi.view.EventDetailFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_event_detail">
+
+        <argument
+            android:name="EventModel"
+            app:argType="com.example.testeandroidsicredi.model.Event" />
+    </fragment>
 </navigation>
