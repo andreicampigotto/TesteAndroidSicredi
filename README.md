@@ -1,4 +1,7 @@
-# Olá este é um README do Sicredi - Pode ser achado no link: https://github.com/WoopSicredi/jobs/issues/1
+# Olá 
+Este é teste para o  Sicredi - API Pode ser encontrada no link: https://github.com/WoopSicredi/jobs/issues/1
+
+##
 
 ## Para testar basta apertar plat no Android Studio 
 <img width="530" alt="Screen Shot 2022-08-26 at 4 29 08 PM" src="https://user-images.githubusercontent.com/38699529/186978355-2c66be95-d261-457b-a9b6-88dba17ae47a.png">
@@ -20,3 +23,11 @@
 - [Material Design](https://material.io/develop/android/) - Material Components for Android
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) - Coroutines
 - [Glide](https://github.com/bumptech/glide) - Glide
+- [Mockito](https://site.mockito.org) - Unit tests
+
+##
+
+### Authors
+- Name: Andrei Campigotto
+- E-mail: andreicampigotto@icloud.com
+- [Linkedin](https://www.linkedin.com/in/andrei-campigotto/)
