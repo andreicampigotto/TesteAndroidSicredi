@@ -9,9 +9,10 @@ Este é teste para o  Sicredi - API Pode ser encontrada no link: https://github.
 
 ## Imagens do app Funcionando
 <p>
-<img width="351" alt="Screen Shot 2022-08-26 at 4 31 37 PM" src="https://user-images.githubusercontent.com/38699529/186978546-3f411fd4-4576-4e9f-8de9-240fc635fd71.png">
-<img width="350" alt="Screen Shot 2022-08-26 at 4 31 48 PM" src="https://user-images.githubusercontent.com/38699529/186978556-35ad136a-a989-4a92-ad92-df59b320d490.png">
-<img width="352" alt="Screen Shot 2022-08-26 at 4 31 58 PM" src="https://user-images.githubusercontent.com/38699529/186978577-161757ec-6b1b-41c1-b5e9-73ba461cbb47.png">
+<img width="348" alt="Screen Shot 2022-09-02 at 2 48 21 PM" src="https://user-images.githubusercontent.com/38699529/188209825-080dfbe4-3658-4551-b02f-3aecdcd521c9.png">
+<img width="353" alt="Screen Shot 2022-09-02 at 2 48 37 PM" src="https://user-images.githubusercontent.com/38699529/188209842-0ae4e9b7-c625-4c4a-8d91-69a216646a94.png">
+<img width="349" alt="Screen Shot 2022-09-02 at 2 48 46 PM" src="https://user-images.githubusercontent.com/38699529/188209854-58c52a77-80fb-4aba-9ad2-7781d23d184f.png">
+
 </p>
 
 
