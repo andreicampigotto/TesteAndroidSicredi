@@ -4,7 +4,13 @@
     <string name="name">Insira seu nome</string>
     <string name="email">Insira seu e-mail</string>
     <string name="title">Title</string>
-    <string name="description">teste teste teste teste teste teste teste teste teste teste teste teste teste teste</string>
+    <string name="lore_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+        aliquam lacus nec nisi condimentum, eget scelerisque ex sollicitudin. Ut nibh lectus,
+        tristique non turpis eget, vestibulum pellentesque erat. Quisque imperdiet risus vel lacus
+        condimentum ultrices. Sed ex nisi, cursus ut nulla ut, interdum semper nulla. Vestibulum
+        imperdiet massa vitae quam porta, a sodales orci rutrum. Sed id lectus quis orci varius
+        lacinia a quis orci. Nullam eleifend, metus in interdum pulvinar, orci massa volutpat nisi,
+        sit amet finibus dolor tellus vitae nulla.</string>
     <string name="date">Date</string>
     <string name="valor">9.99</string>
     <string name="send">Enviar</string>

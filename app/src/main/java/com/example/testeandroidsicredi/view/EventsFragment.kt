@@ -17,6 +17,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class EventsFragment : Fragment(R.layout.fragment_events) {
 
+    companion object {
+        fun newInstance() = EventsFragment()
+    }
+
     private lateinit var viewModel: EventViewModel
     private lateinit var binding: FragmentEventsBinding
 

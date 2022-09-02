@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EventImgTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EventItemImgInfo">
+        <item name="android:textColor">@color/medium_white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="EventDescriptionTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="EventDescription">
+        <item name="android:textColor">@color/medium_white</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="EventDescriptionReadMoreAction" parent="@style/EventDescriptionTitle">
+        <item name="android:textColor">@color/event_info_icon_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyEditText">
+        <item name="backgroundTint">@color/text_layout_bg</item>
+        <item name="android:textColor">@color/medium_white</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="MyTextInputLayout">
+        <item name="startIconTint">@color/edit_txt_layout_content</item>
+        <item name="android:textColorHint">@color/edit_txt_layout_content</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+    </style>
+
+    <style name="MyTextInputLayout.ClearText" parent="MyTextInputLayout">
+        <item name="endIconMode">clear_text</item>
+    </style>
+
+</resources>

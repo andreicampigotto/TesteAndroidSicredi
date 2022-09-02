@@ -3,17 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragmentCheckIn"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/text_layout_bg">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/accessibility_padding"
         android:text="@string/Insert_data"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tfNome"
+        app:layout_constraintBottom_toTopOf="@id/tfNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:hint="@string/name"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +38,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableTint="@color/white"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,15 +51,18 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:hint="@string/email"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tfNome"
+        app:layout_constraintTop_toBottomOf="@id/tfNome"
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableTint="@color/white"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 

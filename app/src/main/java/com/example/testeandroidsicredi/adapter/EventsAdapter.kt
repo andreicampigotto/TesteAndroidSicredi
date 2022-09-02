@@ -45,13 +45,12 @@ class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding: ItemEventBinding = ItemEventBinding.bind(itemView)
 
     fun bind(event: Event) {
-        binding.tvTitle.text = event.title
-        binding.tvDescription.text = event.description
-        binding.incImage.tvPrice.text = event.price.toString()
+        binding.eventItemDate.text = event.formattedDate()
+        binding.eventItemPrice.text = event.price.toString()
         event.image.let {
             Glide.with(itemView.context).load(it)
                 .placeholder(R.drawable.logo)
-                .into(binding.incImage.ivImage)
+                .into(binding.ivImage)
         }
     }
 }

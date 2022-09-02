@@ -24,10 +24,8 @@ data class Event(
     val id: String,
 ) : Serializable {
     fun formattedDate(): String {
-        val timeD = Date(date / 1000)
-        val sdf = SimpleDateFormat("dd/MM/yyyy")
-
-        return sdf.format(timeD)
+        val dateFormatted = SimpleDateFormat("dd/MM/yyyy")
+        return dateFormatted.format(date).capitalize()
     }
 }
 

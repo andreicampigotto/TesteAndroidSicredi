@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#388E3C</color>
     <color name="light_green">#5ACC5F</color>
+
+    <color name="app_background_color">#212835</color>
+    <color name="event_info_icon_color">#CFBBF3</color>
+    <color name="medium_white">#f2f2f2</color>
+
+    <color name="text_layout_bg">#2F3A4B</color>
+    <color name="edit_txt_layout_content">@color/medium_white</color>
 </resources>

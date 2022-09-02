@@ -45,11 +45,12 @@ class EventDetailFragment() : Fragment(R.layout.fragment_event_detail) {
         binding.tvTitle.text = event.title
         binding.tvDescription.text = event.description
         binding.tvDate.text = event.formattedDate()
+        binding.eventInfoPrice.text = event.price.toString()
 
         event.image.let {
             Glide.with(this).load(it)
                 .placeholder(R.drawable.logo)
-                .into(binding.incImage.ivImage)
+                .into(binding.ivImage)
         }
     }
 
